@@ -34,7 +34,6 @@ const navigate=useNavigate();
     window.location.reload();
   };
   return (
-<>
 
 
    
@@ -43,14 +42,14 @@ const navigate=useNavigate();
 
 
 
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto  px-4 py-16 sm:px-6 sm:py-24 lg:max-w-3xl lg:px-8">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900">
           SECOND HAND CAR COLLECTION
         </h2>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-1 xl:gap-x-8">
           {data.map((product) => (
-            <div key={product._id} className="">
+            <div key={product._id} >
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                 <img
                   src={product.image}
@@ -77,7 +76,7 @@ const navigate=useNavigate();
                   {product.mileage}
                 </p>
 
-                <div className="pl-4 mt-2">
+                <div className=" mt-2">
                 <button
                   onClick={() => carEdit(product._id)}
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -86,7 +85,7 @@ const navigate=useNavigate();
                 </button>
               </div>
 
-              <div className="pl-4 mt-2">
+              <div className=" mt-2">
                 <button
                   className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-indigo-600"
                   onClick={() => handledelete(product._id)}
@@ -102,6 +101,6 @@ const navigate=useNavigate();
       </div>
     </div>
    
-   </>
+  
   );
 }
