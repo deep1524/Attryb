@@ -8,7 +8,7 @@ export default function Dealer_page() {
   const [data, setData] = useState([]);
 const navigate=useNavigate();
   const getdata = () => {
-    fetch("http://localhost:8080/car")
+    fetch("https://attryb-vlos.onrender.com/car")
       .then((response) => response.json())
       .then((data) => setData(data), console.log(data))
       .catch((error) => console.error(error));
@@ -26,7 +26,7 @@ const navigate=useNavigate();
   const handledelete = (id) => {
     console.log("in");
     axios
-      .delete(`http://localhost:8080/car/delete/${id}`)
+      .delete(`https://attryb-vlos.onrender.com/car/delete/${id}`)
       .then((e) => console.log("deleted successfully"),
      )
       .catch((e) => console.log(e));
@@ -77,7 +77,7 @@ const navigate=useNavigate();
                   {product.mileage}
                 </p>
 
-                <div className="mt-2">
+                <div className="pl-4 mt-2">
                 <button
                   onClick={() => carEdit(product._id)}
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -86,7 +86,7 @@ const navigate=useNavigate();
                 </button>
               </div>
 
-              <div className="mt-2">
+              <div className="pl-4 mt-2">
                 <button
                   className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-indigo-600"
                   onClick={() => handledelete(product._id)}

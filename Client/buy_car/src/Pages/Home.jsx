@@ -5,7 +5,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   const[query,setQuery] = useState("");
   const getdata = () => {
-    fetch(`http://localhost:8080/car/${query}`)
+    fetch(`https://attryb-vlos.onrender.com/car/${query}`)
       .then((response) => response.json())
       .then((data) => setData(data), console.log(data))
       .catch((error) => console.error(error));
@@ -23,7 +23,7 @@ const Home = () => {
     <>
     <Navbar/>
    
-    <div>
+    <div className="mt-10">
       <div>
         <label className="mr-10 font-bold">Price</label>
         <select defaultValue="option" onChange={(e)=>handlechange(e.target.value)}>

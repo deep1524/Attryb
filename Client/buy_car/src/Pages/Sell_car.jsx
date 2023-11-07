@@ -7,7 +7,7 @@ const Sell_car = () => {
   const searchRef = useRef(null);
   const [queryString, setQueryString] = useState("");
   const getdata = () => {
-    fetch(`http://localhost:8080/oemspec/?${queryString}`)
+    fetch(`https://attryb-vlos.onrender.com/oemspec/?${queryString}`)
       .then((response) => response.json())
       .then((data) => setData(data.data), console.log(data))
       .catch((error) => console.error(error));
